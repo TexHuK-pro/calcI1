@@ -41,7 +41,7 @@ public class Main {
                 throw new IllegalArgumentException("строка не является математической операцией или выражение было введено не коректно");
             }
 
-            //расскидаем по переменным полученный массив
+            //разложим элементы массива по переменным
             val1 = expression[0];
             val2 = expression[2];
             operator = expression[1];
@@ -64,7 +64,7 @@ public class Main {
                 throw new IllegalArgumentException("Используются одновременно разные системы счисления");
             }
 
-            //если арабских чисел нету, тогда преобразовываем римский числа в арабские
+            //если арабских чисел нету, тогда преобразовываем римские числа в арабские
             if (!found1 && !found2) {
                 val1 = String.valueOf(romanToArabic(val1));
                 val2 = String.valueOf(romanToArabic(val2));
