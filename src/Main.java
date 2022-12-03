@@ -46,6 +46,10 @@ public class Main {
             val2 = expression[2];
             operator = expression[1];
 
+            if (Integer.parseInt(val1) <= 0 || Integer.parseInt(val2) <= 0) {
+                throw new IllegalArgumentException("операнд не может быть меньше, или равняться нулю");
+            }
+
             //проверяем, есть ли значении арабские цифры
             ArrayList haystack = new ArrayList();
             for (int i = 1; i < 100; i++) {
