@@ -46,10 +46,6 @@ public class Main {
             val2 = expression[2];
             operator = expression[1];
 
-            if (Integer.parseInt(val1) <= 0 || Integer.parseInt(val2) <= 0) {
-                throw new IllegalArgumentException("операнд не может быть меньше, или равняться нулю");
-            }
-
             //проверяем, есть ли значении арабские цифры
             ArrayList haystack = new ArrayList();
             for (int i = 1; i < 100; i++) {
@@ -72,6 +68,10 @@ public class Main {
             if (!found1 && !found2) {
                 val1 = String.valueOf(romanToArabic(val1));
                 val2 = String.valueOf(romanToArabic(val2));
+            }
+
+            if (Integer.parseInt(val1) <= 0 || Integer.parseInt(val2) <= 0) {
+                throw new IllegalArgumentException("операнд не может быть меньше, или равняться нулю");
             }
 
             //вычесление оператора и действие
@@ -103,7 +103,7 @@ public class Main {
 
         } catch (NumberFormatException e) {
             System.out.println(e.getMessage());
-            throw new IllegalArgumentException("Используются одновременно разные системы счисления");
+            throw new IllegalArgumentException("Используются одновременно разные системы счисления 2");
         }
         return String.valueOf(result);
     }
